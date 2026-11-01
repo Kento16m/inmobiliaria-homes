@@ -1,0 +1,81 @@
+export const colorGroups = [
+  {
+    key: 'primary',
+    swatches: [
+      { token: 'primary-50', className: 'bg-primary-50' },
+      { token: 'primary-100', className: 'bg-primary-100' },
+      { token: 'primary-200', className: 'bg-primary-200' },
+      { token: 'primary-300', className: 'bg-primary-300' },
+      { token: 'primary-400', className: 'bg-primary-400' },
+      { token: 'primary-500', className: 'bg-primary-500' },
+      { token: 'primary-600', className: 'bg-primary-600' },
+      { token: 'primary-700', className: 'bg-primary-700' },
+      { token: 'primary-800', className: 'bg-primary-800' },
+      { token: 'primary-900', className: 'bg-primary-900' },
+    ],
+  },
+  {
+    key: 'secondary',
+    swatches: [
+      { token: 'secondary-50', className: 'bg-secondary-50' },
+      { token: 'secondary-100', className: 'bg-secondary-100' },
+      { token: 'secondary-200', className: 'bg-secondary-200' },
+      { token: 'secondary-300', className: 'bg-secondary-300' },
+      { token: 'secondary-400', className: 'bg-secondary-400' },
+      { token: 'secondary-500', className: 'bg-secondary-500' },
+      { token: 'secondary-600', className: 'bg-secondary-600' },
+      { token: 'secondary-700', className: 'bg-secondary-700' },
+      { token: 'secondary-800', className: 'bg-secondary-800' },
+      { token: 'secondary-900', className: 'bg-secondary-900' },
+    ],
+  },
+  {
+    key: 'danger',
+    swatches: [
+      { token: 'danger-50', className: 'bg-danger-50' },
+      { token: 'danger-100', className: 'bg-danger-100' },
+      { token: 'danger-200', className: 'bg-danger-200' },
+      { token: 'danger-300', className: 'bg-danger-300' },
+      { token: 'danger-400', className: 'bg-danger-400' },
+      { token: 'danger-500', className: 'bg-danger-500' },
+      { token: 'danger-600', className: 'bg-danger-600' },
+      { token: 'danger-700', className: 'bg-danger-700' },
+      { token: 'danger-800', className: 'bg-danger-800' },
+      { token: 'danger-900', className: 'bg-danger-900' },
+    ],
+  },
+  {
+    key: 'gray',
+    swatches: [
+      { token: 'gray-50', className: 'bg-gray-50' },
+      { token: 'gray-100', className: 'bg-gray-100' },
+      { token: 'gray-200', className: 'bg-gray-200' },
+      { token: 'gray-300', className: 'bg-gray-300' },
+      { token: 'gray-400', className: 'bg-gray-400' },
+      { token: 'gray-500', className: 'bg-gray-500' },
+      { token: 'gray-600', className: 'bg-gray-600' },
+      { token: 'gray-700', className: 'bg-gray-700' },
+      { token: 'gray-800', className: 'bg-gray-800' },
+      { token: 'gray-900', className: 'bg-gray-900' },
+    ],
+  },
+  {
+    key: 'extra',
+    swatches: [
+      { token: 'surface', className: 'bg-surface' },
+      { token: 'accent', className: 'bg-accent' },
+    ],
+  },
+] as const
+
+export const typeScale = [
+  { name: 'H1', className: 'text-h1', size: 36, lineHeight: 44 },
+  { name: 'H2', className: 'text-h2', size: 30, lineHeight: 38 },
+  { name: 'H3', className: 'text-h3', size: 24, lineHeight: 32 },
+  { name: 'H4', className: 'text-h4', size: 20, lineHeight: 30 },
+  { name: 'H5', className: 'text-h5', size: 18, lineHeight: 28 },
+  { name: 'P1', className: 'text-p1', size: 16, lineHeight: 24 },
+  { name: 'P2', className: 'text-p2', size: 14, lineHeight: 20 },
+  { name: 'P3', className: 'text-p3', size: 12, lineHeight: 18 },
+  { name: 'P4', className: 'text-p4', size: 10, lineHeight: 16 },
+] as const

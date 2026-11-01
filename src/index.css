@@ -1,5 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Colores muestreados de docs/03-styleguide.png */
+  --color-primary-50: #f5f8ff;
+  --color-primary-100: #dae2fe;
+  --color-primary-200: #c0ccfc;
+  --color-primary-300: #97acfd;
+  --color-primary-400: #5677fc;
+  --color-primary-500: #2c55fb;
+  --color-primary-600: #2548d5;
+  --color-primary-700: #1e3aab;
+  --color-primary-800: #162a7e;
+  --color-primary-900: #0f1d55;
+
+  --color-secondary-50: #f3fbf4;
+  --color-secondary-100: #e3f6e6;
+  --color-secondary-200: #d3f1d9;
+  --color-secondary-300: #a7e2b0;
+  --color-secondary-400: #65cc75;
+  --color-secondary-500: #22b83a;
+  --color-secondary-600: #1d9c31;
+  --color-secondary-700: #177d27;
+  --color-secondary-800: #115c1d;
+  --color-secondary-900: #0c3f14;
+
+  --color-danger-50: #fef5f6;
+  --color-danger-100: #fbe5e6;
+  --color-danger-200: #f8d5d5;
+  --color-danger-300: #f2c2c0;
+  --color-danger-400: #e1706f;
+  --color-danger-500: #d43331;
+  --color-danger-600: #b42b2a;
+  --color-danger-700: #902321;
+  --color-danger-800: #6a1a18;
+  --color-danger-900: #481111;
+
+  --color-gray-50: #eaeaea;
+  --color-gray-100: #e2e2e2;
+  --color-gray-200: #cecfd3;
+  --color-gray-300: #babbbf;
+  --color-gray-400: #90939b;
+  --color-gray-500: #7d8088;
+  --color-gray-600: #686d76;
+  --color-gray-700: #555a66;
+  --color-gray-800: #3f4653;
+  --color-gray-900: #2c3340;
+
+  --color-surface: #f5f7f9;
+  --color-accent: #efcf2f;
+
+  /* Escala tipográfica: tamaño / line-height del diseño */
+  --text-h1: 2.25rem;
+  --text-h1--line-height: 2.75rem;
+  --text-h1--font-weight: 600;
+  --text-h2: 1.875rem;
+  --text-h2--line-height: 2.375rem;
+  --text-h2--font-weight: 600;
+  --text-h3: 1.5rem;
+  --text-h3--line-height: 2rem;
+  --text-h3--font-weight: 600;
+  --text-h4: 1.25rem;
+  --text-h4--line-height: 1.875rem;
+  --text-h4--font-weight: 600;
+  --text-h5: 1.125rem;
+  --text-h5--line-height: 1.75rem;
+  --text-h5--font-weight: 600;
+  --text-p1: 1rem;
+  --text-p1--line-height: 1.5rem;
+  --text-p2: 0.875rem;
+  --text-p2--line-height: 1.25rem;
+  --text-p3: 0.75rem;
+  --text-p3--line-height: 1.125rem;
+  --text-p4: 0.625rem;
+  --text-p4--line-height: 1rem;
+
+  --radius-button: 0.5rem;
+  --radius-card: 0.75rem;
+  --radius-pill: 62.4375rem;
+
+  --shadow-card: 0 2px 12px 0 rgb(44 51 64 / 0.06);
+}
+
+@layer base {
+  body {
+    @apply bg-surface font-sans text-p2 text-gray-900 antialiased;
+  }
 }
