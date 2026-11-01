@@ -22,6 +22,16 @@ const sizes: Record<ButtonSize, string> = {
   md: 'h-10 gap-2 px-4 text-p2',
 }
 
+// Estilos compartidos para usar el aspecto de botón en otros elementos (p. ej. Link)
+export function buttonStyles(variant: ButtonVariant = 'primary', size: ButtonSize = 'md', className?: string) {
+  return cn(
+    'inline-flex items-center justify-center rounded-button font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 disabled:pointer-events-none disabled:opacity-50',
+    variants[variant],
+    sizes[size],
+    className,
+  )
+}
+
 export default function Button({
   variant = 'primary',
   size = 'md',
@@ -32,16 +42,7 @@ export default function Button({
   ...rest
 }: ButtonProps) {
   return (
-    <button
-      type={type}
-      className={cn(
-        'inline-flex items-center justify-center rounded-button font-medium transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 disabled:pointer-events-none disabled:opacity-50',
-        variants[variant],
-        sizes[size],
-        className,
-      )}
-      {...rest}
-    >
+    <button type={type} className={buttonStyles(variant, size, className)} {...rest}>
       {icon}
       {children}
     </button>

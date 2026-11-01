@@ -27,8 +27,12 @@ export interface Strings {
     newProperty: string
   }
   common: {
-    previousPage: string
-    nextPage: string
+    yes: string
+    no: string
+    previous: string
+    next: string
+    goToPage: (page: string) => string
+    showing: (from: string, to: string, total: string) => string
   }
   propertyTypes: {
     apartment: string
@@ -39,6 +43,84 @@ export interface Strings {
   listingStatus: {
     forSale: string
     forRent: string
+  }
+  property: {
+    perMonth: string
+    sqft: (value: string) => string
+    bedrooms: (count: number) => string
+    bathrooms: (count: number) => string
+  }
+  propertiesPage: {
+    viewGrid: string
+    viewMap: string
+    mapPlaceholder: string
+    empty: string
+  }
+  propertyForm: {
+    name: string
+    namePlaceholder: string
+    address: string
+    addressPlaceholder: string
+    city: string
+    cityPlaceholder: string
+    price: string
+    pricePlaceholder: string
+    photos: string
+    addPhoto: string
+    removePhoto: string
+    photoAlt: (index: number) => string
+    description: string
+    descriptionPlaceholder: string
+    exclusiveDetails: string
+    listing: string
+    sell: string
+    rent: string
+    furnishing: string
+    furnished: string
+    unfurnished: string
+    elevator: string
+    parking: string
+    type: string
+    area: string
+    bedrooms: string
+    bathrooms: string
+    floor: string
+    decrease: string
+    increase: string
+    errors: {
+      required: string
+      invalidPrice: string
+      invalidNumber: string
+      photosRequired: string
+    }
+  }
+  propertyDetail: {
+    back: string
+    notFoundTitle: string
+    notFoundText: string
+    details: string
+    detailsSubtitle: string
+    specifications: string
+    propertyType: string
+    status: string
+    yearBuilt: string
+    parking: string
+    area: string
+    bedrooms: string
+    bathrooms: string
+    city: string
+    pricePerSqft: string
+    reference: string
+    assignedAgent: string
+    furnished: string
+    elevator: string
+    floor: string
+    location: string
+    notApplicable: string
+    noParking: string
+    parkingSpots: (count: number) => string
+    thumbnail: (index: number) => string
+    emailSubject: (title: string) => string
   }
   actions: {
     addProperty: string
@@ -114,8 +196,12 @@ export const strings: Strings = {
     newProperty: 'Agregar propiedad',
   },
   common: {
-    previousPage: 'Página anterior',
-    nextPage: 'Página siguiente',
+    yes: 'Sí',
+    no: 'No',
+    previous: 'Anterior',
+    next: 'Siguiente',
+    goToPage: (page) => `Ir a la página ${page}`,
+    showing: (from, to, total) => `Mostrando ${from}-${to} de ${total}`,
   },
   propertyTypes: {
     apartment: 'Departamento',
@@ -126,6 +212,84 @@ export const strings: Strings = {
   listingStatus: {
     forSale: 'En venta',
     forRent: 'En alquiler',
+  },
+  property: {
+    perMonth: '/mes',
+    sqft: (value) => `${value} sqft`,
+    bedrooms: (count) => `${count} ${count === 1 ? 'dormitorio' : 'dormitorios'}`,
+    bathrooms: (count) => `${count} ${count === 1 ? 'baño' : 'baños'}`,
+  },
+  propertiesPage: {
+    viewGrid: 'Vista de cuadrícula',
+    viewMap: 'Vista de mapa',
+    mapPlaceholder: 'La vista de mapa estará disponible próximamente.',
+    empty: 'No hay propiedades de este tipo.',
+  },
+  propertyForm: {
+    name: 'Nombre de la propiedad',
+    namePlaceholder: 'ej. Casa en Villa Morra',
+    address: 'Dirección',
+    addressPlaceholder: 'ej. Av. San Martín 1450',
+    city: 'Ciudad',
+    cityPlaceholder: 'ej. Asunción',
+    price: 'Precio (USD)',
+    pricePlaceholder: 'ej. 150000',
+    photos: 'Fotos de la propiedad',
+    addPhoto: 'Agregar foto',
+    removePhoto: 'Quitar foto',
+    photoAlt: (index) => `Foto ${index} de la propiedad`,
+    description: 'Descripción corta',
+    descriptionPlaceholder: 'Describe la propiedad en pocas oraciones',
+    exclusiveDetails: 'Detalles exclusivos',
+    listing: 'Venta / Alquiler',
+    sell: 'Venta',
+    rent: 'Alquiler',
+    furnishing: 'Amoblado / Sin amoblar',
+    furnished: 'Amoblado',
+    unfurnished: 'Sin amoblar',
+    elevator: 'Ascensor',
+    parking: 'Estacionamiento',
+    type: 'Tipo',
+    area: 'Superficie (sqft)',
+    bedrooms: 'Dormitorios',
+    bathrooms: 'Baños',
+    floor: 'Piso',
+    decrease: 'Disminuir',
+    increase: 'Aumentar',
+    errors: {
+      required: 'Este campo es obligatorio',
+      invalidPrice: 'Ingresa un precio válido',
+      invalidNumber: 'Ingresa un valor válido',
+      photosRequired: 'Agrega al menos una foto',
+    },
+  },
+  propertyDetail: {
+    back: 'Volver a propiedades',
+    notFoundTitle: 'Propiedad no encontrada',
+    notFoundText: 'La propiedad que buscas no existe o fue eliminada.',
+    details: 'Detalles',
+    detailsSubtitle: 'Información esencial de la propiedad',
+    specifications: 'Especificaciones',
+    propertyType: 'Tipo de propiedad',
+    status: 'Estado',
+    yearBuilt: 'Año de construcción',
+    parking: 'Estacionamiento',
+    area: 'Superficie',
+    bedrooms: 'Dormitorios',
+    bathrooms: 'Baños',
+    city: 'Ciudad',
+    pricePerSqft: 'Precio por sqft',
+    reference: 'Referencia',
+    assignedAgent: 'Agente asignado',
+    furnished: 'Amoblado',
+    elevator: 'Ascensor',
+    floor: 'Piso',
+    location: 'Ubicación',
+    notApplicable: 'No aplica',
+    noParking: 'Sin estacionamiento',
+    parkingSpots: (count) => `${count} ${count === 1 ? 'lugar' : 'lugares'}`,
+    thumbnail: (index) => `Ver imagen ${index}`,
+    emailSubject: (title) => `Consulta por ${title}`,
   },
   actions: {
     addProperty: 'Agregar propiedad',

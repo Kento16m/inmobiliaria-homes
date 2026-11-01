@@ -16,7 +16,7 @@ const typeItems = [
 export default function FormShowcase() {
   const { components } = strings.styleguide
   const [tab, setTab] = useState('apartment')
-  const [page, setPage] = useState(2)
+  const [page, setPage] = useState(1)
 
   return (
     <>
@@ -36,7 +36,9 @@ export default function FormShowcase() {
       </ShowcaseSection>
 
       <ShowcaseSection title={components.pagination}>
-        <Pagination page={page} pageCount={12} onPageChange={setPage} />
+        <div className="w-full">
+          <Pagination page={page} total={12} pageSize={9} onPageChange={setPage} />
+        </div>
       </ShowcaseSection>
     </>
   )

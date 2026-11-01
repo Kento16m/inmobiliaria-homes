@@ -52,8 +52,12 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
               onClick={onClose}
               className={({ isActive }) => `${linkBase} ${isActive ? linkActive : linkIdle}`}
             >
-              <Icon className="size-5 shrink-0" />
-              {strings.menu[key]}
+              {({ isActive }) => (
+                <>
+                  <Icon className={`size-5 shrink-0 ${isActive ? 'text-primary-500' : 'text-gray-400'}`} />
+                  {strings.menu[key]}
+                </>
+              )}
             </NavLink>
           ))}
         </nav>
